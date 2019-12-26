@@ -55,27 +55,31 @@ dependencies:
   }
  ```
   ### ShareWebWithImageData
-  ```dart
-    String assetPath = 'images/test.png';
-    ByteData byteData = await rootBundle.load(assetPath);
-    Uint8List pngBytes = byteData.buffer.asUint8List();
+ ```dart
+    void shareWebWithImageData() async{
+      String assetPath = 'images/test.png';
+      ByteData byteData = await rootBundle.load(assetPath);
+      Uint8List pngBytes = byteData.buffer.asUint8List();
 
-    var result = await apopen.shareWebAndImgData(
-      imageData: pngBytes,
-      wepageUrl: 'https://www.XXX.com',
-      title: 'Text Title',
-      desc: 'Text desc',
-      );
-    print(result);
+      var result = await apopen.shareWebAndImgData(
+        imageData: pngBytes,
+        wepageUrl: 'https://www.XXX.com',
+        title: 'Text Title',
+        desc: 'Text desc',
+        );
+      print(result);    
+    }
  ```
 
    ### ShareWebWithImageUrl
   ```dart
-    var result = await apopen.shareWebAndImgUrl(
-      imageUrl: 'http://XXX.jpg',
-      wepageUrl: 'https://www.XXX.com',
-      title: 'Text Title',
-      desc: 'Text desc',
-      );
-    print(result);
+    void shareWebWithImageUrl() async{
+      var result = await apopen.shareWebAndImgUrl(
+        imageUrl: 'http://XXX.jpg',
+        wepageUrl: 'https://www.XXX.com',
+        title: 'Text Title',
+        desc: 'Text desc',
+        );
+      print(result);
+    }    
  ```

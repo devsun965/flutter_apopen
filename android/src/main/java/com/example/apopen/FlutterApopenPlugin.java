@@ -25,6 +25,7 @@ import java.util.Map;
 /**
  * FlutterNativeLogPlugin
  */
+@SuppressWarnings("unchecked")
 public class FlutterApopenPlugin implements MethodCallHandler {
 
     private static Registrar myRegistrar;
