@@ -12,6 +12,6 @@
 
 - (void)registerApp:(FlutterMethodCall *)call result:(FlutterResult)result;
 
-
+- (void)isAPAppInstalledWithResult:(FlutterResult)result;
 @end
 

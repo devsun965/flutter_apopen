@@ -23,4 +23,8 @@
 
 }
 
+- (void)isAPAppInstalledWithResult:(FlutterResult)result {
+    result(@([APOpenAPI isAPAppInstalled]));
+}
+
 @end

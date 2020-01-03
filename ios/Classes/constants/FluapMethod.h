@@ -16,6 +16,7 @@ extern NSString *const fluapMethodsShareImageUrl;
 extern NSString *const fluapMethodsShareImageData;
 extern NSString *const fluapMethodsShareWebImageData;
 extern NSString *const fluapMethodsShareWebImageUrl;
+extern NSString *const fluapMethodsIsAPAppInstalled;
 
 @end
 

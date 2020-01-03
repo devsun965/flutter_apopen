@@ -15,6 +15,7 @@ NSString *const fluapMethodsShareImageUrl = @"shareImageUrl";
 NSString *const fluapMethodsShareImageData = @"shareImageData";
 NSString *const fluapMethodsShareWebImageData = @"shareWebData";
 NSString *const fluapMethodsShareWebImageUrl = @"shareWebUrl";
+NSString *const fluapMethodsIsAPAppInstalled = @"isAPAppInstalled";
 
 
 @end

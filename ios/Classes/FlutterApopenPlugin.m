@@ -45,6 +45,8 @@ FluapShareHandle *_fluApShareHandle;
         [_fluApShareHandle shareWebAndImageDataWithCall:call result:result];
     }else if ([fluapMethodsShareWebImageUrl isEqualToString: call.method]) {
         [_fluApShareHandle shareWebAndImageUrlWithCall:call result: result];
+    }else if ([fluapMethodsIsAPAppInstalled isEqualToString: call.method]) {
+        [_fluApApiHandle isAPAppInstalledWithResult: result];
     }
 }
 

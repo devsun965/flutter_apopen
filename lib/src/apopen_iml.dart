@@ -69,3 +69,7 @@ Future shareWebAndImgUrl(
     "imageUrl": imageUrl
   });  
 }
+// is Alipay installed
+Future isAPAppInstalled() async{
+  return await _channel.invokeMethod("isAPAppInstalled");  
+}

@@ -43,7 +43,9 @@ public class FlutterApopenPlugin implements MethodCallHandler {
     @Override
     public void onMethodCall(MethodCall call, Result result) {
         if (call.method.equals("registerAp")) {
-            registerAP(call,result);
+            registerAP(call, result);
+        }else if (call.method.equals("isAPAppInstalled")) {
+            isAPAppInstalled(result);
         }else if (call.method.equals("shareText")) {
             sendTextMessage(call, result);
         }else if (call.method.equals("shareImageData")) {
@@ -60,9 +62,22 @@ public class FlutterApopenPlugin implements MethodCallHandler {
     private void registerAP(MethodCall call, Result result) {
         String appId = call.argument("appId");
         _api = APAPIFactory.createZFBApi(myRegistrar.context(),appId,false);
-        boolean isInstalled = _api.isZFBSupportAPI();
-        System.out.print(isInstalled);
+        boolean isSupport = _api.isZFBSupportAPI();
+        System.out.print(isSupport);
+        Map resultMap = new HashMap();
+        resultMap.put("platform","Android");
+        resultMap.put("result",isSupport);
+
+        result.success(resultMap);
     }
+
+    private void isAPAppInstalled(Result result) {
+        boolean isInstalled = _api.isZFBAppInstalled();
+        System.out.print(isInstalled);
+
+        result.success(isInstalled);
+    }
+
 
     //文本信息分享
     private void sendTextMessage(MethodCall call, Result result) {
