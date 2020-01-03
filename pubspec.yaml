@@ -1,6 +1,6 @@
 name: flutter_apopen
 description: A Flutter plugin for AliPay SocialSDK to Share.
-version: 0.0.3
+version: 0.0.4
 author: devsun965 <devsun.965@gmail.com>
 homepage: https://github.com/devsun965/flutter_apopen
 
@@ -27,7 +27,7 @@ flutter:
   plugin:
     androidPackage: yunupay.flutter_apopen
     pluginClass: FlutterApopenPlugin
-  
+
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
