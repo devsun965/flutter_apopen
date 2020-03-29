@@ -21,11 +21,24 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+gradle.ext.STORE_FILE = localProperties.getProperty('STORE_FILE')
+gradle.ext.STORE_PASSWORD = localProperties.getProperty('STORE_PASSWORD')
+gradle.ext.KEY_ALIAS = localProperties.getProperty('KEY_ALIAS')
+gradle.ext.KEY_PASSWORD = localProperties.getProperty('KEY_PASSWORD')
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    signingConfigs {
+        config {
+            storeFile rootProject.file(gradle.STORE_FILE)
+            storePassword gradle.STORE_PASSWORD
+            keyAlias gradle.KEY_ALIAS
+            keyPassword gradle.KEY_PASSWORD
+        }
+    }    
     compileSdkVersion 28
 
     sourceSets {
